@@ -9,12 +9,16 @@ assignees: ''
 
 ## Description
 
-'...'
+...
 
 ## Expected Result
 
-'...'
+...
 
 ## Linked Issues
 
-'...'
+...
+
+## Additionnal Information
+
+...
