@@ -1,7 +1,7 @@
 ---
-name: 🔧 Fix issues
-about: This is an issues template for fixing bugs
-title: "[Fix]: Issue to fix"
+name: 🐛 Bug report
+about: Report a bug
+title: "[Bug]: What bug should be reported"
 labels: bug
 assignees: ''
 
@@ -11,9 +11,13 @@ assignees: ''
 
 A clear and concise description of the issue.
 
+## Steps to reproduce
+
+Describe the steps to reproduce to trigger the bug.
+
 ## Expected behavior
 
-How should the program work after the fix.
+How should the program works without the bug.
 
 ## Linked Issues
 
