@@ -3,6 +3,7 @@
 
 # Binary name
 pacman
+a.out
 
 # Temporary files
 *~
@@ -16,3 +17,6 @@ tmp/
 unit_tests
 *.gcno
 *.gcda
+
+# Misc
+.clang-format
