@@ -18,5 +18,3 @@ unit_tests
 *.gcno
 *.gcda
 
-# Misc
-.clang-format
