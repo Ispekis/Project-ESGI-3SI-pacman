@@ -1,0 +1,61 @@
+name: code linter
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+jobs:
+  run-cppcheck-linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check size left
+        run: df -h
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Download cppcheck
+        timeout-minutes: 2
+        run: sudo apt-get install -y cppcheck
+      - name: Vetify cppcheck installation
+        run: cppcheck --version
+      - name: Run cppcheck linter
+        timeout-minutes: 2
+        run: |
+          cppcheck --error-exitcode=1 src/*.c
+          linter_exit_code=$?
+          if [ $linter_exit_code -eq 1 ]
+            then echo "::error" && exit 1
+          fi
+          exit 0
+  run-clang-format-linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check size left
+        run: df -h
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Download clang-format
+        run: sudo apt-get install -y clang-format
+      - name: Verify clang-format installation
+        run: clang-format --version
+      - name: Run clang-format linter
+        timeout-minutes: 2
+        run: |
+          clang-format -style=file --dry-run --Werror src/*.c
+          format_exit_code=$?
+          if [ $format_exit_code -eq 1 ]
+            then echo "::error" && exit 1
+          fi
+          exit 0
+      - name: Hint correct formatting
+        if: failure()
+        run: clang-format -style=file src/*.c
+

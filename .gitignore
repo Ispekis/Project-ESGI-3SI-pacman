@@ -1,0 +1,20 @@
+# C compilations files
+*.o
+
+# Binary name
+pacman
+a.out
+
+# Temporary files
+*~
+*.tmp
+tmp/
+
+# vscode config file
+.vscode
+
+# Testing policies files
+unit_tests
+*.gcno
+*.gcda
+
