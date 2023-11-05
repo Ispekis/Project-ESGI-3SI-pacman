@@ -1,0 +1,19 @@
+name: Move new issue to backlog
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  moveIssue:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Move Issue to Project
+      uses: softprops/action-gh-project@v0.1.1
+      with:
+        project: 'Project-pacman'  # Replace with your project name
+        column: '📋 Backlog'    # Replace with your column name
+        issue: ${{ github.event.issue.number }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
