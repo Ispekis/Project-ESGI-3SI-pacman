@@ -3,7 +3,7 @@
 void handle_collisions(void)
 {
     printf("Gamplay handle collisions\n");
-
+    return;
 }
 
 void handle_game_replayability(void)
