@@ -6,6 +6,12 @@ void handle_collisions(void)
     return;
 }
 
+void handle_game_replayability(void)
+{
+    printf("Handle game replayability\n");
+    return;
+}
+
 void compute_gameplay(void)
 {
     printf("Computing gameplay mechanics...\n");
