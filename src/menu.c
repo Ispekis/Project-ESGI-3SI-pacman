@@ -3,6 +3,7 @@
 void display_menu(void)
 {
     printf("%s\n", "Displaying the menu");
+    printf("ok\n");
     return;
 }
 
